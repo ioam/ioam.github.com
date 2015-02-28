@@ -1,0 +1,925 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Continuous Coords. &mdash; HoloViews</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/bootstrap.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/codehilite.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/rtd_bootstrap.css" type="text/css" />
+  
+    <link rel="top" title="HoloViews" href="../index.html"/>
+        <link rel="up" title="HoloViews Tutorials" href="index.html"/>
+        <link rel="next" title="Reference Manual" href="../Reference_Manual/index.html"/>
+        <link rel="prev" title="Pandas Seaborn." href="Pandas_Seaborn.html"/> 
+      <script type="text/javascript" src='../_static/jquery.js'></script>
+      <script type="text/javascript" src='../_static/underscore.js'></script>
+      <script type="text/javascript" src='../_static/doctools.js'></script>
+      <script type="text/javascript" src='../_static/require.js'></script>
+      <script type="text/javascript" src='../_static/bootstrap.js'></script>
+      <script type="text/javascript" src='../_static/custom.js'></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> HoloViews</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorials</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Showcase.html">Showcase.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Introduction.html">Introduction.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Exploring_Data.html">Exploring Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Transforming_Data.html">Transforming Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Elements.html">Elements.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Containers.html">Containers.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Pandas_Seaborn.html">Pandas and Seaborn</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Continuous Coordinates</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Reference_Manual/index.html">Reference Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Reference_Manual/holoviews.core.html">core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reference_Manual/holoviews.element.html">element</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reference_Manual/holoviews.interface.html">interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reference_Manual/holoviews.ipython.html">ipython</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reference_Manual/holoviews.operation.html">operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reference_Manual/holoviews.plotting.html">plotting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reference_Manual/holoviews.styles.html">style</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="http://github.com/ioam/holoviews">Github source</a></li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">HoloViews</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">HoloViews Tutorials</a> &raquo;</li>
+      
+    <li>Continuous Coords.</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/Tutorials/Continuous_Coords.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="continuous-coords">
+<h1>Continuous Coords.<a class="headerlink" href="#continuous-coords" title="Permalink to this headline">¶</a></h1>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Continuous-Coordinates">Continuous Coordinates<a class="anchor-link" href="#Continuous-Coordinates">&#182;</a></h1>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>HoloViews is designed to work with scientific and engineering data, which is often in the form of discrete samples from an underlying continuous system.  Imaging data is one clear example: measurements taken at a regular interval over a grid covering a two-dimensional area.  Although the measurements are discrete, they approximate a continuous distribution, and HoloViews provides extensive support for working naturally with data of this type.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2D-Continuous-spaces">2D Continuous spaces<a class="anchor-link" href="#2D-Continuous-spaces">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this tutorial we will show the support provided by HoloViews for working with two-dimensional regularly sampled grid data like images, and then in subsequent sections discuss how HoloViews supports one-dimensional, higher-dimensional, and irregularly sampled data with continuous coordinates.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">holoviews</span>
+<span class="o">%</span><span class="k">load_ext</span> <span class="n">holoviews</span><span class="o">.</span><span class="n">ipython</span>
+
+<span class="kn">from</span> <span class="nn">holoviews</span> <span class="kn">import</span> <span class="n">Raster</span><span class="p">,</span> <span class="n">Image</span><span class="p">,</span> <span class="n">HeatMap</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="n">np</span><span class="o">.</span><span class="n">set_printoptions</span><span class="p">(</span><span class="n">precision</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">80</span><span class="p">)</span>
+<span class="o">%</span><span class="k">opts</span> <span class="n">HeatMap</span> <span class="p">(</span><span class="n">cmap</span><span class="o">=</span><span class="s">&quot;hot&quot;</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>First, let&#39;s consider: </p>
+<dl compact>
+<dt><code>f(x,y)</code></dt><dd>a simple function that accepts a location in a 2D plane specified in millimeters (mm)</dd>
+<dt><code>region</code></dt><dd>a 1mm$\times$1mm square region of this 2D plane, centered at the origin, and</dd>
+<dt><code>coords</code></dt><dd>a function returning a square (s$\times$s) grid of (x,y) coordinates regularly sampling the region in the given bounds, at the centers of each grid cell:</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span> 
+    <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">/</span><span class="mf">3.1</span>
+    
+<span class="n">region</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">coords</span><span class="p">(</span><span class="n">bounds</span><span class="p">,</span><span class="n">samples</span><span class="p">):</span>
+    <span class="n">l</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">t</span><span class="o">=</span><span class="n">bounds</span>
+    <span class="n">hc</span><span class="o">=</span><span class="mf">0.5</span><span class="o">/</span><span class="n">samples</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="n">hc</span><span class="p">,</span><span class="n">r</span><span class="o">-</span><span class="n">hc</span><span class="p">,</span><span class="n">samples</span><span class="p">),</span>
+                       <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">b</span><span class="o">+</span><span class="n">hc</span><span class="p">,</span><span class="n">t</span><span class="o">-</span><span class="n">hc</span><span class="p">,</span><span class="n">samples</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now let&#39;s build a Numpy array regularly sampling this function at a density of 5 samples per mm: </p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">f5</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">coords</span><span class="p">(</span><span class="n">region</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">f5</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
+
+
+<div class="output_text output_subarea output_pyout">
+<pre>
+array([[-0.53, -0.33, -0.13,  0.07,  0.27],
+       [-0.46, -0.26, -0.06,  0.14,  0.34],
+       [-0.4 , -0.2 ,  0.  ,  0.2 ,  0.4 ],
+       [-0.34, -0.14,  0.06,  0.26,  0.46],
+       [-0.27, -0.07,  0.13,  0.33,  0.53]])
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can visualize this array (and thus the function <code>f</code>) either using a <code>Raster</code>, which uses the array&#39;s own integer-based coordinate system (which we will call &quot;array&quot; coordinates), or an <code>Image</code>, which uses a continuous coordinate system, or as a HeatMap labelling each value explicitly:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">r5</span> <span class="o">=</span> <span class="n">Raster</span><span class="p">(</span><span class="n">f5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&quot;R5&quot;</span><span class="p">)</span>
+<span class="n">i5</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span> <span class="n">f5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&quot;I5&quot;</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">region</span><span class="p">)</span>
+<span class="n">h5</span> <span class="o">=</span> <span class="n">HeatMap</span><span class="p">({(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span><span class="n">f5</span><span class="p">[</span><span class="mi">4</span><span class="o">-</span><span class="n">y</span><span class="p">,</span><span class="n">x</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">)},</span> <span class="n">label</span><span class="o">=</span><span class="s">&quot;H5&quot;</span><span class="p">)</span>
+<span class="n">r5</span><span class="o">+</span><span class="n">i5</span><span class="o">+</span><span class="n">h5</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
+
+<div class="output_html rendered_html output_subarea output_pyout">
+<center><img src='data:image/png;base64,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msySpg4gJrNLcc410CxeOVHqj06Q+qMTpP5IYlNfdIKac18E6o9OQG39kaaQiYiIiIhI0lACIyLNlpm1MbP/NrMPzGydmY2ppd44M1tpZu+a2XtmdktU2RfN7LCZFQavZY33DkRERKSh6R4YEWnObgU+ds71NrNewF/NrJdz7tMa9bYDX3bO7TCzdsDbZrbCObc0KF/rnPunxgxcREREEkMjMCLSnH0DeATAObcRf+/pP9es5Jxb4ZzbESwfANZR9ecORERE5BSiBEZEmrOuwNao9W3U82cFzOxC4HPAa1Gbs4PpY8vN7IaGD1NEREQai6aQiUiTMbNVxE5IHHDOCRzvXOAF4HuVIzLA20AX59xBM+uOf2xpsXOueT5yRUREROqkBEZEmoxzLq+ucjPbhv/zBHuDTd2oPrISXTcD+DPwX86556POcTBqeYuZvYD/swdKYERERJKQppCJSHP2O2AygJn1BgYD/1uzkpml45OX2c65J2uUnWNmFiynASOBwgTHLSIiIgmiBEZEmrP7gA5m9gHwMvDdyieQmdldZjY5qPdjoBcwJepxyflB2deAd82sEHgDeNo593Ljvg0RERFpKJpCJiLNlnPuMP5JZLHK7ohang5Mr6Xew8DDCQlQREREGp1GYEREREREJGk0SgJjZneYWcTM+jTG+URERERE5NSU8ATGzPKAi4EtiT6XiIiIiIic2hKawJhZK+BXwPcAS+S5RERERETk1JfoEZiZwDPOua311hQREREREalHwp5CZmZDgUHOuR9Fb45Vt9neGJPd1AHU4aKmDqAun2/qAOpwSVMHIM2c+qMToP7oBKk/ktqpLzoBzbovAvVHDSeRIzBfAC4ys81mthk4D3jVzEYk8JwiIiIiInIKS1gC45z7L+dcF+dcD+dcD+AjYKRzbnGizikiIiIiIqc2/R0YERERERFJGgm7B6amYBRGRERERETkhGkERkREREREkoYSGBERERERSRpKYEREREREJGkogRERERERkaShBEZERERERJKGEhgREREREUkaSmBERERERCRpKIEREREREZGkoQRGRERERESShhIYERERERFJGkpgRERERBqRmV1gZsvMbL2ZvWlmveLdtwT4CTAN+CmwvZZ6vwNuAm4BfgisjiqbDdwa9fo6sDIoWx3UHw88Hfc78jaUwtBNkL0Bhm2CjaWx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' style='max-width:100%'/><center/>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Both the <code>Raster</code> and <code>Image</code> <code>Element</code> types accept the same input data, but a visualization of the <code>Raster</code> type reveals the underlying raw array indexing, while the <code>Image</code> type has been labelled with the coordinate system from which we know the data has been sampled.  All <code>Image</code> operations work with this continuous coordinate system instead, while the corresponding operations on a <code>Raster</code> use raw array indexing.</p>
+<p>For instance, all five of these indexing operations refer to the same element of the underlying Numpy array, i.e. the second item in the first row:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="s">&quot;r5[0,1]=</span><span class="si">%0.2f</span><span class="s">  r5.data[0,1]=</span><span class="si">%0.2f</span><span class="s">  i5[-0.2,0.4]=</span><span class="si">%0.2f</span><span class="s">  i5[-0.24,0.37]=</span><span class="si">%0.2f</span><span class="s">  i5.data[0,1]=</span><span class="si">%0.2f</span><span class="s">&quot;</span> <span class="o">%</span> \
+<span class="p">(</span><span class="n">r5</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>       <span class="n">r5</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>       <span class="n">i5</span><span class="p">[</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.4</span><span class="p">],</span>       <span class="n">i5</span><span class="p">[</span><span class="o">-</span><span class="mf">0.24</span><span class="p">,</span><span class="mf">0.37</span><span class="p">],</span>       <span class="n">i5</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
+
+
+<div class="output_text output_subarea output_pyout">
+<pre>
+&apos;r5[0,1]=-0.33  r5.data[0,1]=-0.33  i5[-0.2,0.4]=-0.33  i5[-0.24,0.37]=-0.33  i5.data[0,1]=-0.33&apos;
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can see that the <code>Raster</code> and the underlying <code>.data</code> elements use Numpy&#39;s integer indexing, while the <code>Image</code> uses floating-point values that are then mapped onto the appropriate array element.</p>
+<p>This diagram should help show the relationships between the <code>Raster</code> coordinate system in the plot (which ranges from 0 at the top edge to 5 at the bottom), the underlying raw Numpy integer array indexes (labelling each dot in the <strong>Array coordinates</strong> figure), and the underlying <strong>Continuous coordinates</strong>:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<TABLE style='border:5'>
+<TR>
+<TH><CENTER>Array coordinates</CENTER></TH>
+<TH><CENTER>Continuous coordinates</CENTER></TH>
+</TR>
+<TR>
+<TD><IMG src="http://ioam.github.io/topographica/_images/matrix_coords.png"></TD>
+<TD><IMG src="http://ioam.github.io/topographica/_images/sheet_coords_-0.2_0.4.png"></TD>
+</TR>
+</TABLE>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Importantly, although we used a 5$\times$5 array in this example, we could substitute a much larger array with the same continuous coordinate system if we wished, without having to change any of our continuous indexes -- they will still point to the correct location in the continuous space:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">f10</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="o">*</span><span class="n">coords</span><span class="p">(</span><span class="n">region</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">f10</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
+
+
+<div class="output_text output_subarea output_pyout">
+<pre>
+array([[-0.6 , -0.5 , -0.4 , -0.3 , -0.2 , -0.1 ,  0.  ,  0.1 ,  0.2 ,  0.3 ],
+       [-0.56, -0.46, -0.36, -0.26, -0.16, -0.06,  0.04,  0.14,  0.24,  0.34],
+       [-0.53, -0.43, -0.33, -0.23, -0.13, -0.03,  0.07,  0.17,  0.27,  0.37],
+       [-0.5 , -0.4 , -0.3 , -0.2 , -0.1 ,  0.  ,  0.1 ,  0.2 ,  0.3 ,  0.4 ],
+       [-0.47, -0.37, -0.27, -0.17, -0.07,  0.03,  0.13,  0.23,  0.33,  0.43],
+       [-0.43, -0.33, -0.23, -0.13, -0.03,  0.07,  0.17,  0.27,  0.37,  0.47],
+       [-0.4 , -0.3 , -0.2 , -0.1 , -0.  ,  0.1 ,  0.2 ,  0.3 ,  0.4 ,  0.5 ],
+       [-0.37, -0.27, -0.17, -0.07,  0.03,  0.13,  0.23,  0.33,  0.43,  0.53],
+       [-0.34, -0.24, -0.14, -0.04,  0.06,  0.16,  0.26,  0.36,  0.46,  0.56],
+       [-0.3 , -0.2 , -0.1 , -0.  ,  0.1 ,  0.2 ,  0.3 ,  0.4 ,  0.5 ,  0.6 ]])
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">r10</span> <span class="o">=</span> <span class="n">Raster</span><span class="p">(</span><span class="n">f10</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&quot;R10&quot;</span><span class="p">)</span>
+<span class="n">i10</span> <span class="o">=</span> <span class="n">Image</span><span class="p">(</span> <span class="n">f10</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">&quot;I10&quot;</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">region</span><span class="p">)</span>
+<span class="n">r10</span><span class="o">+</span><span class="n">i10</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[7]:</div>
+
+<div class="output_html rendered_html output_subarea output_pyout">
+<center><img src='data:image/png;base64,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' style='max-width:100%'/><center/>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The image now has higher resolution, but still visualizes the same underlying continuous function, now evaluated at 100 grid positions instead of 25:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<TABLE style='border:5'>
+<TR>
+<TH><CENTER>Array coordinates</CENTER></TH>
+<TH><CENTER>Continuous coordinates</CENTER></TH>
+</TR>
+<TR>
+<TD><IMG src="http://ioam.github.io/topographica/_images/matrix_coords_hidensity.png"></TD>
+<TD><IMG src="http://ioam.github.io/topographica/_images/sheet_coords_-0.2_0.4.png"></TD>
+</TR>
+</TABLE>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Indexing the exact same coordinates as above now gets very different results:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="s">&quot;r10[0,1]=</span><span class="si">%0.2f</span><span class="s">  r10.data[0,1]=</span><span class="si">%0.2f</span><span class="s">  i10[-0.2,0.4]=</span><span class="si">%0.2f</span><span class="s">  i10[-0.24,0.37]=</span><span class="si">%0.2f</span><span class="s">  i10.data[0,1]=</span><span class="si">%0.2f</span><span class="s">&quot;</span> <span class="o">%</span> \
+<span class="p">(</span><span class="n">r10</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>       <span class="n">r10</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>       <span class="n">i10</span><span class="p">[</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.4</span><span class="p">],</span>       <span class="n">i10</span><span class="p">[</span><span class="o">-</span><span class="mf">0.24</span><span class="p">,</span><span class="mf">0.37</span><span class="p">],</span>       <span class="n">i10</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[8]:</div>
+
+
+<div class="output_text output_subarea output_pyout">
+<pre>
+&apos;r10[0,1]=-0.50  r10.data[0,1]=-0.50  i10[-0.2,0.4]=-0.30  i10[-0.24,0.37]=-0.36  i10.data[0,1]=-0.50&apos;
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The array-based indexes used by <code>Raster</code> and the Numpy array in <code>.data</code> still return the second item in the first row of the array, but this array element now corresponds to location (-0.35,0.4) in the continuous function, and so the value is different.  These indexes thus do <em>not</em> refer to the same location in continuous space as they did for the other array density, so this type of indexing is <em>not</em> independent of density or resolution.</p>
+<p>Luckily, the two continuous coordinates still return very similar values to what they did before, since they always return the value of the array element corresponding to the closest location in continuous space.  They now return elements just above and to the right, or just below and to the left, of the earlier location, because the array now has a higher resolution with elements centered at different locations.  </p>
+<p>Indexing in continuous coordinates always returns the value closest to the requested value, given the available resolution.  Note that in the case of coordinates truly on the boundary between array elements (as for -0.2,0.4), the bounds of each array cell are taken as right exclusive and upper exclusive, and so (-0.2,0.4) returns array index (3,0). </p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Slicing-in-2D">Slicing in 2D<a class="anchor-link" href="#Slicing-in-2D">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In addition to indexing (looking up a value), slicing (selecting a region) works as expected in continuous space.  For instance, we can ask for a slice from (-0.275,-0.0125) to (0.025,0.2885) in continuous coordinates:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">sl10</span><span class="o">=</span><span class="n">i10</span><span class="p">[</span><span class="o">-</span><span class="mf">0.275</span><span class="p">:</span><span class="mf">0.025</span><span class="p">,</span><span class="o">-</span><span class="mf">0.0125</span><span class="p">:</span><span class="mf">0.2885</span><span class="p">]</span>
+<span class="n">sl10</span><span class="o">.</span><span class="n">data</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[9]:</div>
+
+
+<div class="output_text output_subarea output_pyout">
+<pre>
+array([[-0.33, -0.23, -0.13],
+       [-0.3 , -0.2 , -0.1 ],
+       [-0.27, -0.17, -0.07]])
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">sl10</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[10]:</div>
+
+<div class="output_html rendered_html output_subarea output_pyout">
+<center><img src='data:image/png;base64,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' style='max-width:100%'/><center/>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This slice has selected those array elements whose centers are contained within the specified continuous space.  To do this, the continuous coordinates are first converted by HoloViews into the floating-point range (5.125,2.250) (2.125,5.250) of array coordinates, and all those elements whose centers are in that range are selected:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<TABLE style='border:5'>
+<TR>
+<TH><CENTER>Array coordinates</CENTER></TH>
+<TH><CENTER>Continuous coordinates</CENTER></TH>
+</TR>
+<TR>
+<TD><IMG src="http://ioam.github.io/topographica/_images/connection_field.png"></TD>
+<TD><IMG src="http://ioam.github.io/topographica/_images/sheet_coords_-0.275_-0.0125_0.025_0.2885.png"></TD>
+</TR>
+</TABLE>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Slicing also works for <code>Raster</code> elements, but it results in an object that always reflects the contents of the underlying Numpy array (i.e., always with the upper left corner labelled 0,0):</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">r5</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">+</span> <span class="n">r5</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[11]:</div>
+
+<div class="output_html rendered_html output_subarea output_pyout">
+<center><img src='data:image/png;base64,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' style='max-width:100%'/><center/>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Hopefully these examples make it clear that if you are using data that is sampled from some underlying continuous system, you should use the continuous coordinates offered by HoloViews objects like <code>Image</code> so that your programs can be independent of the resolution or sampling density of that data, and so that your axes and indexes can be expressed in the underlying continuous space.  The data will still be stored in the same Numpy array, but now you can treat it consistently like the approximation to continuous values that it is.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1D-and-nD-Continuous-coordinates">1D and nD Continuous coordinates<a class="anchor-link" href="#1D-and-nD-Continuous-coordinates">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>All of the above examples use the common case for visualizations of a two-dimensional regularly gridded continuous space, which is implemented in <code>holoviews.core.sheetcoords.SheetCoordinateSystem</code>.  </p>
+<p>Similar continuous coordinates and slicing are also supported for <code>Chart</code> elements, such as <code>Curve</code>s, but using a single index and allowing arbitrary irregular spacing, implemented in <code>holoviews.elements.chart.Chart</code>. </p>
+<p>They also work the same for the n-dimensional coordinates and slicing supported by the <a href="Containers.html">container</a> types <code>HoloMap</code>, <code>NdLayout</code>, and <code>NdOverlay</code>, implemented in <code>holoviews.core.dimension.Dimensioned</code> and again allowing arbitrary irregular spacing.  </p>
+<p>Together, these powerful continuous-coordinate indexing and slicing operations allow you to work naturally and simply in the full $n$-dimensional space that characterizes your data and parameter values.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Sampling">Sampling<a class="anchor-link" href="#Sampling">&#182;</a></h2>
+</div>
+</div>
+</div>
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The above examples focus on indexing and slicing, but there is another related operation supported for continuous spaces, called sampling.  Sampling is similar to indexing and slicing, in that all of them can reduce the dimensionality of your data, but sampling is implemented in a general way that applies for any of the 1D, 2D, or nD datatypes.  For instance, if we take our 10$\times$10 array from above, we can ask for the value at a given location, which will come back as a <code>Table</code>, i.e. a dictionary with one (key,value) pair:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">e10</span><span class="o">=</span><span class="n">i10</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">x</span><span class="o">=-</span><span class="mf">0.275</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mf">0.2885</span><span class="p">)</span>
+<span class="n">e10</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[12]:</div>
+
+<div class="output_html rendered_html output_subarea output_pyout">
+<center><img src='data:image/png;base64,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' style='max-width:100%'/><center/>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Simililarly, if we ask for the value of a given $y$ location in continuous space, we will get a <code>Curve</code> with the array row closest to that $y$ value in the <code>Image</code> 2D array returned as an array of $x$ values and the corresponding $z$ value from the image:</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">r10</span><span class="o">=</span><span class="n">i10</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mf">0.2885</span><span class="p">)</span>
+<span class="n">r10</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[13]:</div>
+
+<div class="output_html rendered_html output_subarea output_pyout">
+<center><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQMAAAD1CAYAAABUbZB7AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAEPtJREFUeJzt3X+MXNV5xvHvgxEgg0LLD8exZZs0NqaN+gMLqFFoQEqEQlxKmihUEGSUn6SN+kcpSLUqAoaiSaBplCInOEUNEUqBpqipIqrEBFAFwikQQwqUWl61xQgDFRgHSlUnxW//mLtkGN8Zz+7OnXPumecjjTT3zp3xeRn72fO+O7soIjAzOyz1AswsDw4DMwMcBmZWcRiYGeAwMLOKw8DMADg89QLGSVLs27cv9TLMsjPzk59x+fZ9HHfkYfz9h35Jddd4Z5BYp9NJvYRGub70ZoPg1Z8GSxcvGnidw8CsYL1BsP7tR3DtaccOvFYlfQLRbYLZz9UFwRGLxLHHHus2wWxaDAqCYRwGibWh51wI1zd58wkCcBiYFWW+QQCeGZgVY9Qg8MzArGAL2RHMchgklmPPOU6ur3njCAJwGJi12riCADwzMGut+QaBZwZmBRnnjmCWwyCxHHrOJrm+8WsiCMBhYNYqTQUBeGZg1hrjCgLPDMxarMkdwSyHQWLuqdttEvVNIgjAYWCWtUkFAXhmYJatpoLAMwOzFpnkjmCWwyAx99Tt1kR9KYIAHAZmWUkVBOCZgVk2JhUEnhmYZSzljmCWwyAx99TtNo76cggCcBiYJZVLEIBnBmbJpAoCzwzMMpLTjmCWwyAx99TtNp/6cgwCcBiYTVSuQQCeGZhNTC5B4JmBWUK5BMEwWYSBpJMlbZe0U9JDklbXXHOVpCcl/VjSo5LOTbHWcXNP3W6j1NeGIIBMwgC4GbgpItYCW4CtNdf8M3BaRPw68AngTklHTnCNZnPWliCADGYGkpYAO4HjIiIkLQJeAlZHxMsDniPgFeBXImJPz3nPDCwbuQZBzjODFcBzUaVSRLwB7KnOD7IRmOkNArOc5BoEw+QQBnMi6WzgWuCi1GsZB/fU7VZXXxuDAPIIg2eB5dXWn6pNWFadfwtJZwK3ARdExK66F+t9czqdTvbHDz74YFbrcX0Lq+/Ka65/MwgWbdvCMfd+7c0gyGG9w8I5+cwAQNL9wC0R8S1JlwAfj4j39V1zOnAX8JGIeGTA63hmYMm0ZUcwaGaQSxisBb4J/CKwF9gYEbsk3Q1cFRE7JD0MrKI7T5h1SUQ81fM6DgNLoi1BAHkPEImInRGxPiLWRsSZsy1ARGyIiB3V/TMi4u0RcWrP7anhr5y/aeypS9LpdFoVBMNkEQZmbbV3/4EiggAyaRPGxW2CTVJbdwRZtwlmbdPWIBjGYZDYNPTUpekNgkXbthQRBACHp16AWZv07wiOWXZUEUEAnhmYjayU1sAzA7MFKCUIhnEYJFZiT92rhPqGBUEJ9c1yGJgNMQ07glmeGZgNUGoQeGZgNgelBsEwDoPESuo567SxvrkEQRvrG8RhYNZjGncEszwzMKtMSxB4ZmA2xLQEwTAOg8RK6jnrtKG+hQRBG+oblcPAppp3BD/nmYFNrWkNAs8MzHpMaxAM4zBIrKSes06O9Y0zCHKsb74cBjZVvCMYzDMDmxoOgi7PDGyqOQgOzWGQWEk9Z50c6msyCHKob1wcBlY07whG55mBFctBUM8zA5sqDoK5cxgkVlLPWSdFfZMMgpLeP4eBFcU7gvnzzMCK4SAYjWcGVjQHwcI5DBIrqeesM4n6UgZBSe+fw8BazTuC8fHMwFrLQTA/nhlYURwE4+cwSKyknrNOE/XlFAQlvX/Jw0DSyZK2S9op6SFJq2uuWSRpi6QZSbskfTLFWi29nIKgNMlnBpLuA26JiL+R9DHgExHxvr5rNgIXR8QHJJ0APAacFRHP9F3nmUHBHATjkeXMQNIS4FTg9urUHcA6Scf3XXoh8HWAiHgJ+A7w0Umt09JzEDQvdZuwAnguqu1JRLwB7KnO91oJ9O4Cdtdc00ol9Zx1xlFfzkFQ0vuXOgzMhso5CEqTOgyeBZZLEnQHhcCy6nyv3cBJPcerqnMH6U3qTqeT/XH/2lOvJ6f6rrzmej58+bVvBsEx936NL93whWLqS33cL4cB4v10B4jfknQJ8PGaAeKlwEXAecAJwA48QCyadwTNyXKAWPks8IeSdgKfq46RdLekddU1twH/DuwCtgOb+4OgrUrqOevMp742BUFJ79/hqRcQETuB9TXnN/TcPwD8wSTXZWm0KQhKk7xNGCe3Ce3mIJiMnNsEMwdBBhwGiZXUc9YZpb42B0FJ75/DwJJqcxCUxjMDS8ZBkIZnBpYVB0F+HAaJldRz1qmrr6QgKOn9cxjYRJUUBKXxzMAmxkGQB88MLCkHQf4cBomV1HPW6XQ6RQdBSe/fIcNA0vmSjug7d3ZzS7KS7N1/oNggKM0hZwaS9gOPAL8TEXurc49FxKkTWN+ceGaQl5J3BG22kJnBvwLfBB6s+83FZnUcBO0z0swgIv4K+CNgm6Qzm13SdCmp55zVGwSLtm0pOghKev9G/n0GEfF9Sb8L3AX0//ZiM+DgHcExy44qNghKM8rM4IMR8Y89x8uBT0XE5qYXN1eeGaTl1qAdBs0M/KEjGwsHQXv4Q0eZKqHnHBYEJdQ3TEn1OQxsQbwjKIfbBJs3B0E7uU2wsXIQlMdhkFgbe865BEEb65uLkupzGNiceEdQLs8MbGQOgjJ4ZmAL4iAon8MgsTb0nAsJgjbUtxAl1ecwsKG8I5genhnYQA6CMnlmYHPiIJg+DoPEcuw5xxkEOdY3TiXV5zCwt/COYHp5ZmBvchBMB88MbCgHgTkMEsuh52wyCHKor0kl1ecwmHLeEdispDMDSYuBbwDrgP8DroiIu2uuuwC4CjgSEPDXEfEXNdd5ZjAHDoLpNGhmMPJvR27IFcC+iFhT/T8ZHpC0OiJe77vueeC3I+IFSW8DfiTp4Yh4cOIrLoSDwPqlbhMuBLYCRMQM8ChwXv9FEfFwRLxQ3X8VeBpYOcF1NiZFzznJICipp65TUn2pw2Al8EzP8W5gxbAnSDoFWA/c1+C6iuUdgQ3S6MxA0g7q/3EHsBTYB7wzIl6urt8CzETElwe83juA+4E/jYi7ah73zGAIB4FBos8ZRMS6iDix5rYkIg7Q3Qmc1POUVdW5g0haAtwDfLEuCGb1bts6nY6Pq+OZn/yMD19+LTvv+MqbQfClG76Qzfp8PPnjfqm/m3A1sDwiPiNpDfAA8K7+AaKk4+m2BV+NiK1DXq91O4NOp8OmTZsa/TNS7ggmUV9Kbawv108g3gj8gqRdwHeBT88GgaTNki6rrvsTYDXwWUmPVbdL0yy5Xdwa2Kj8swkFcxBYnVx3BtYQB4HNlcMgsSa+T51TEJT0ffg6JdXnMChMTkFg7eKZQUEcBDYKzwwK5yCwhXIYJDaOnjPnICipp65TUn0Og5bLOQisXTwzaDEHgc2HZwaFcRDYuDkMEptPz9mmICipp65TUn0Og5ZpUxBYu3hm0CIOAhsHzwxazkFgTXMYJDZKz9nmICipp65TUn0Og8y1OQisXTwzyJiDwJrgmUHLOAhs0hwGidX1nCUFQUk9dZ2S6nMYZKakILB28cwgIw4CmwTPDDLnILDUHAaJdTqdooOgpJ66Tkn1OQwS27v/QLFBYO3imUFCJe8ILF+eGWTGQWC5cRgk0BsEi7ZtKToISuqp65RU3+GpFzBt+ncExyw7qtggsHbxzGCC3BpYDjwzSMxBYLlzGEzAsCAoqees4/raw2HQMO8IrC08M2iQg8By5JnBhDkIrG0cBg2YSxCU1HPWcX3t4TAYM+8IrK08MxgjB4G1QXYzA0mLJd0paZekpyVtOMT1R0l6StIjk1rjXDgIrO1StglXAPsiYg1wPnCLpKOHXH89sB3IbiuzkCAoqees4/raI2UYXAhsBYiIGeBR4Ly6CyX9FrAauA3I6sutdwRWimQzA0mvAu+MiJer4y3ATER8ue+6o4F/ort7WAvcGBGnD3jNic4MHATWRoNmBo391KKkHcCKmocCWDqHl7oR2BIRz0taO5bFjYGDwErTWJsQEesi4sSa25KIOADsBk7qecqq6ly/9wCfl/QfwO3Ar0p6fNCf29vDdTqdRo5ng2DnHV95y+8jmM/rbdiwYU7Xt+3Y9eV73C9lm3A1sDwiPiNpDfAA8K6IeH3Ic84G/jxlmzDuHUGn02HTpk1jXGFeXF9+BrUJKcNgMXArcCrwBnBlRHy3emwzsCcitvY95xzghog4Y8BrNhoGbg2sBNmFQROaDAMHgZUiuw8dtUmTQVDS96nruL72cBgcgncENi3cJgzhILASuU2YIweBTRuHQY1JBkFJPWcd19ceDoM+3hHYtPLMoIeDwKaBZwaH4CCwaecwIG0QlNRz1nF97TH1YeAdgVnXVM8MHAQ2jTwz6OMgMHurqQyDnIKgpJ6zjutrj6kLg5yCwCwnUzUzcBCYeWbgIDA7hKkIg5yDoKSes47ra4/iwyDnIDDLSdEzAweB2cGmbmbgIDCbmyLDoE1BUFLPWcf1tUdxYdCmIDDLSXEzg/fesctBYDbE1MwMHARm81NcGLQpCPbv3891112XehmNcX3tUlybkHoNZm0QEQd9tSwqDMxs/oprE8xsfhwGZgY4DBonabGkOyXtkvS0pA0DrrtA0qOSnpD0pKTLex47R9L/SHqsum2fXAW1az1Z0nZJOyU9JGl1zTWLJG2RNFPV/slRHsvFiDVeVb1XP67eu3N7HrtG0os979lNk61gHiLCtwZvwOeBrdX91cDzwNE1150BLK3uvw3YBZxVHZ8DPJK6lp613gdcXN3/GHBvzTUbge9V908AngVWHeqxXG4j1ngucFR1/9eAV4Ajq+OrgRtS1zGXm3cGzbsQ2AoQETPAo8B5/RdFxMMR8UJ1/1XgaWDlBNc5EklLgFOB26tTdwDrJB3fd+mFwNcBIuIl4DvAR6vHfm/IY8mNWmNEbIuI/60OnwAEzF6j6tYaDoPmrQSe6TneDawY9gRJpwDr6X51mrW22m7+UNLG8S9zZCuA56L68hcRbwB7OLimYXWvGPJYDkatsddGYCYi9lTHAVwk6V8kfV/S+kZXPAaHp15A20naQf1fkgCWzuP13kH3K+Xvz+4UgB8ByyPiNUknAT+Q9FxE3Du/VSdT5PexJZ0NXAu8v+f0zcCfRcQbkt4P/IOkX46IvUkWOQLvDBYoItZFxIk1tyURcYDuV72Tep6yqjp3kGp7eg/wxYi4q+fPeC0iXqvu/yfdsHhPMxUd0rPAckmC7jAQWFad71VX97NDHqv9b5LIqDUi6UzgNuCCiNg1ez4iXqx2FETED6rnvnsCa583h0Hzvg1cBiBpDXAa8L3+i6p+9B7gpoj4Rt9jS3v+Yh5Hd3D1WMPrrhUR/wU8DlxcnboI2BERL/dd+m3g0+o6EbgA+LsRHktu1BolnQ7cCXwkIh7ve2x5z/3foBt+Oxtc9sKlnmCWfgMWA39L97sD/wac3/PYZuCy6v6NwOt0/5HP3i6tHvsc8GR17gngjxPXtBb4Id2/3NuBNdX5u4F11f3DgK8CM9XtUz3PH/hYLrcRa3wYeLHvPXt39dit1Xv1eHXdB1LXdKibP45sZoDbBDOrOAzMDHAYmFnFYWBmgMPAzCoOAzMDHAZmVnEYmBngMLAGSDpF0m5JK6vjqyXdfqjnWVr+BKI1QtIldD9GfTXwl8BpEfHfaVdlwzgMrDGSbqX7S0vOiogkP1hlo3ObYI2QdATdH9l9hXn8XgebPIeBNeVG4BG6P259c++P9Fqe/JuObOwkfQh4L/CbEfFTSZuB2yWdE91f+GIZ8szAzAC3CWZWcRiYGeAwMLOKw8DMAIeBmVUcBmYGOAzMrOIwMDMA/h+TOCR2I0l/ugAAAABJRU5ErkJggg==' style='max-width:100%'/><center/>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class="highlight"><pre><span class="n">r10</span><span class="o">.</span><span class="n">data</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[14]:</div>
+
+
+<div class="output_text output_subarea output_pyout">
+<pre>
+array([[-0.45, -0.53],
+       [-0.35, -0.43],
+       [-0.25, -0.33],
+       [-0.15, -0.23],
+       [-0.05, -0.13],
+       [ 0.05, -0.03],
+       [ 0.15,  0.07],
+       [ 0.25,  0.17],
+       [ 0.35,  0.27],
+       [ 0.45,  0.37]])
+</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The same sampling syntax can be used on Holoviews objects with any number of continuous-coordinate dimensions, in each case returning a Holoviews object of the correct dimensionality.  This support for working in continuous spaces makes it much more natural to work with HoloViews objects than directly with the underlying raw Numpy arrays, but the raw data always remains available when needed.</p>
+</div>
+</div>
+</div></div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Reference_Manual/index.html" class="btn btn-neutral float-right" title="Reference Manual"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Pandas_Seaborn.html" class="btn btn-neutral" title="Pandas Seaborn."><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014 IOAM: Jean-Luc R. Stevens and Philipp Rudiger.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'2014.05.14',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
