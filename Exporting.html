@@ -39,6 +39,9 @@
     <link rel="stylesheet" href="../_static/rtd_bootstrap.css" type="text/css" />
   
     <link rel="top" title="HoloViews" href="../index.html"/>
+        <link rel="up" title="HoloViews Tutorials" href="index.html"/>
+        <link rel="next" title="Elements" href="Elements.html"/>
+        <link rel="prev" title="Transforming Data" href="Transforming_Data.html"/>
     <script type="text/javascript" src='../_static/jquery.js'></script>
     <script type="text/javascript" src='../_static/underscore.js'></script>
     <script type="text/javascript" src='../_static/doctools.js'></script>
@@ -74,17 +77,19 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
         
         
-            <ul>
+            <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Tutorials</a><ul>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorials</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="Showcase.html">Showcase</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Introduction.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Exploring_Data.html">Exploring Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Transforming_Data.html">Transforming Data</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Exporting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Elements.html">Elements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Containers.html">Containers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Pandas_Seaborn.html">Pandas and Seaborn</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Continuous_Coordinates.html">Continuous Coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Composing_Data.html">Composing Data</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../Reference_Manual/index.html">Reference Manual</a><ul>
@@ -120,6 +125,8 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
+          <li><a href="index.html">HoloViews Tutorials</a> &raquo;</li>
+      
     <li>Exporting</li>
       <li class="wy-breadcrumbs-aside">
         
@@ -133,16 +140,6 @@
             
   <div class="section" id="exporting">
 <h1>Exporting<a class="headerlink" href="#exporting" title="Permalink to this headline">¶</a></h1>
-
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Exporting-from-HoloViews">Exporting from HoloViews<a class="anchor-link" href="#Exporting-from-HoloViews">&#182;</a></h1>
-</div>
-</div>
-</div>
 
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -332,7 +329,7 @@ var kernel = IPython.notebook.kernel; var nbname = IPython.notebook.get_notebook
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-Automatic capture is now enabled. [2015-03-10 03:56:24]
+Automatic capture is now enabled. [2015-03-11 15:21:06]
 
 </pre>
 </div>
@@ -762,7 +759,7 @@ If no output appears, please check holoviews.archive.last_export_status()
 <div class="output_area"><div class="prompt"></div>
 
 <div class="output_html rendered_html output_subarea ">
-var kernel = IPython.notebook.kernel; var json_data = IPython.notebook.toJSON(); var json_string = JSON.stringify(json_data); var capture = 'holoviews.archive._notebook_data.write(r\"\"\"'+json_string+'\"\"\".encode(\'utf-8\'))'; var pycmd = capture + ';holoviews.archive._export_with_html()'; kernel.execute(pycmd)
+var kernel = IPython.notebook.kernel; var json_data = IPython.notebook.toJSON(); var json_string = JSON.stringify(json_data); var capture = 'holoviews.archive._notebook_data.write(r\"\"\"'+json_string+'\"\"\".decode(\'utf-8\'))'; var pycmd = capture + ';holoviews.archive._export_with_html()'; kernel.execute(pycmd)
 </div>
 
 </div>
@@ -848,7 +845,7 @@ Status of the last call to holoviews.archive.export is unknown.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Accessing-your-saved-data">Accessing your saved data<a class="anchor-link" href="#Accessing-your-saved-data">&#182;</a></h2>
+<h3 id="Accessing-your-saved-data">Accessing your saved data<a class="anchor-link" href="#Accessing-your-saved-data">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -936,6 +933,15 @@ holoviews.archive.auto(exporters=[PlotRenderer.instance(holomap=<span class="bui
 
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Elements.html" class="btn btn-neutral float-right" title="Elements"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="Transforming_Data.html" class="btn btn-neutral" title="Transforming Data"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
