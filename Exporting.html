@@ -331,7 +331,7 @@ var kernel = IPython.notebook.kernel; var nbname = IPython.notebook.get_notebook
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-Automatic capture is now enabled. [2015-04-08 18:30:49]
+Automatic capture is now enabled. [2015-04-17 04:17:35]
 
 </pre>
 </div>
@@ -787,7 +787,7 @@ var kernel = IPython.notebook.kernel; var json_data = IPython.notebook.toJSON();
 <div class="highlight"><pre><span class="kn">import</span> <span class="nn">os</span>
 <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
 <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s">&quot;Exporting&quot;</span><span class="p">):</span>
-    <span class="k">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s">&quot;Exporting&quot;</span><span class="p">))</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s">&quot;Exporting&quot;</span><span class="p">)))</span>
 </pre></div>
 
 </div>
