@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap.css" type="text/css" />
     
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
@@ -26,6 +27,8 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" src="../_static/custom.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap.js"></script>
+    <script type="text/javascript" src="../_static/require.js"></script>
     <link rel="shortcut icon" href="../_static/topo-favicon.ico"/>
     <link rel="top" title="Topographica" href="../index.html" /> 
   </head>
@@ -152,7 +155,7 @@ be using. You can run the following code cell by pressing
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
 Executing user startup file /var/lib/buildbot/docs/.topographicarc
-Timer start: 2015/05/13 04:10:46
+Timer start: 2015/05/13 17:44:00
 
 </pre>
 </div>
@@ -208,7 +211,7 @@ var kernel = IPython.notebook.kernel; var nbname = IPython.notebook.get_notebook
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-Automatic capture is now enabled. [2015-05-13 04:10:48]
+Automatic capture is now enabled. [2015-05-13 17:44:01]
 
 </pre>
 </div>
@@ -599,20 +602,20 @@ million synaptic weights.</p>
 </script>
 
 <div class="animation" align="center">
-    <div id="_anim_imgfa645d221f44481ba716c87c07d3f595"></div>
+    <div id="_anim_imgd3d2f0805cbe43e39bb3284871cc88db"></div>
     <br>
-    <input id="_anim_sliderfa645d221f44481ba716c87c07d3f595" type="range" style="width:350px" name="points" min="0" max="1" step="1" value="0" oninput="animfa645d221f44481ba716c87c07d3f595.set_frame(parseInt(this.value));"></input>
+    <input id="_anim_sliderd3d2f0805cbe43e39bb3284871cc88db" type="range" style="width:350px" name="points" min="0" max="1" step="1" value="0" oninput="animd3d2f0805cbe43e39bb3284871cc88db.set_frame(parseInt(this.value));"></input>
     <br>
-    <button onclick="animfa645d221f44481ba716c87c07d3f595.slower()" style="text-align: center">&#8211;</button>
-    <button onclick="animfa645d221f44481ba716c87c07d3f595.first_frame()" style="text-align: center; min-width: 40px">&#9616;&#9664;&#9664;</button>
-    <button onclick="animfa645d221f44481ba716c87c07d3f595.previous_frame()" style="text-align: center; min-width: 40px">&#9616;&#9664;</button>
-    <button onclick="animfa645d221f44481ba716c87c07d3f595.reverse_animation()" style="text-align: center; min-width: 40px">&#9664;</button>
-    <button onclick="animfa645d221f44481ba716c87c07d3f595.pause_animation()" style="text-align: center; min-width: 40px">&#9616;&nbsp;&#9612;</button>
-    <button onclick="animfa645d221f44481ba716c87c07d3f595.play_animation()" style="text-align: center; min-width: 40px">&#9654;</button>
-    <button onclick="animfa645d221f44481ba716c87c07d3f595.next_frame()" style="text-align: center; min-width: 40px">&#9654;&#9612;</button>
-    <button onclick="animfa645d221f44481ba716c87c07d3f595.last_frame()" style="text-align: center; min-width: 40px">&#9654;&#9654;&#9612;</button>
-    <button onclick="animfa645d221f44481ba716c87c07d3f595.faster()" style="text-align: center">+</button>
-  <form action="#n" name="_anim_loop_selectfa645d221f44481ba716c87c07d3f595" class="anim_control">
+    <button onclick="animd3d2f0805cbe43e39bb3284871cc88db.slower()" style="text-align: center">&#8211;</button>
+    <button onclick="animd3d2f0805cbe43e39bb3284871cc88db.first_frame()" style="text-align: center; min-width: 40px">&#9616;&#9664;&#9664;</button>
+    <button onclick="animd3d2f0805cbe43e39bb3284871cc88db.previous_frame()" style="text-align: center; min-width: 40px">&#9616;&#9664;</button>
+    <button onclick="animd3d2f0805cbe43e39bb3284871cc88db.reverse_animation()" style="text-align: center; min-width: 40px">&#9664;</button>
+    <button onclick="animd3d2f0805cbe43e39bb3284871cc88db.pause_animation()" style="text-align: center; min-width: 40px">&#9616;&nbsp;&#9612;</button>
+    <button onclick="animd3d2f0805cbe43e39bb3284871cc88db.play_animation()" style="text-align: center; min-width: 40px">&#9654;</button>
+    <button onclick="animd3d2f0805cbe43e39bb3284871cc88db.next_frame()" style="text-align: center; min-width: 40px">&#9654;&#9612;</button>
+    <button onclick="animd3d2f0805cbe43e39bb3284871cc88db.last_frame()" style="text-align: center; min-width: 40px">&#9654;&#9654;&#9612;</button>
+    <button onclick="animd3d2f0805cbe43e39bb3284871cc88db.faster()" style="text-align: center">+</button>
+  <form action="#n" name="_anim_loop_selectd3d2f0805cbe43e39bb3284871cc88db" class="anim_control">
     <input type="radio" name="state" value="once" {once_checked}> Once </input>
     <input type="radio" name="state" value="loop" {loop_checked}> Loop </input>
     <input type="radio" name="state" value="reflect" {reflect_checked}> Reflect </input>
@@ -628,7 +631,7 @@ million synaptic weights.</p>
 
       function create_widget() {
           setTimeout(function() {
-              animfa645d221f44481ba716c87c07d3f595 = new Animation(frame_data, 51, "fa645d221f44481ba716c87c07d3f595", 50, false, false);
+              animd3d2f0805cbe43e39bb3284871cc88db = new Animation(frame_data, 51, "d3d2f0805cbe43e39bb3284871cc88db", 50, false, false);
           }, 0);
       }
 
@@ -1745,20 +1748,20 @@ retina.  The axis scales on each plot can be used to compare specific areas acro
 </script>
 
 <div class="animation" align="center">
-    <div id="_anim_img4aaaf0e045d94e3e86a83d084f4cf67d"></div>
+    <div id="_anim_img20df426e26ab4e1ea935cf63753c30e9"></div>
     <br>
-    <input id="_anim_slider4aaaf0e045d94e3e86a83d084f4cf67d" type="range" style="width:350px" name="points" min="0" max="1" step="1" value="0" oninput="anim4aaaf0e045d94e3e86a83d084f4cf67d.set_frame(parseInt(this.value));"></input>
+    <input id="_anim_slider20df426e26ab4e1ea935cf63753c30e9" type="range" style="width:350px" name="points" min="0" max="1" step="1" value="0" oninput="anim20df426e26ab4e1ea935cf63753c30e9.set_frame(parseInt(this.value));"></input>
     <br>
-    <button onclick="anim4aaaf0e045d94e3e86a83d084f4cf67d.slower()" style="text-align: center">&#8211;</button>
-    <button onclick="anim4aaaf0e045d94e3e86a83d084f4cf67d.first_frame()" style="text-align: center; min-width: 40px">&#9616;&#9664;&#9664;</button>
-    <button onclick="anim4aaaf0e045d94e3e86a83d084f4cf67d.previous_frame()" style="text-align: center; min-width: 40px">&#9616;&#9664;</button>
-    <button onclick="anim4aaaf0e045d94e3e86a83d084f4cf67d.reverse_animation()" style="text-align: center; min-width: 40px">&#9664;</button>
-    <button onclick="anim4aaaf0e045d94e3e86a83d084f4cf67d.pause_animation()" style="text-align: center; min-width: 40px">&#9616;&nbsp;&#9612;</button>
-    <button onclick="anim4aaaf0e045d94e3e86a83d084f4cf67d.play_animation()" style="text-align: center; min-width: 40px">&#9654;</button>
-    <button onclick="anim4aaaf0e045d94e3e86a83d084f4cf67d.next_frame()" style="text-align: center; min-width: 40px">&#9654;&#9612;</button>
-    <button onclick="anim4aaaf0e045d94e3e86a83d084f4cf67d.last_frame()" style="text-align: center; min-width: 40px">&#9654;&#9654;&#9612;</button>
-    <button onclick="anim4aaaf0e045d94e3e86a83d084f4cf67d.faster()" style="text-align: center">+</button>
-  <form action="#n" name="_anim_loop_select4aaaf0e045d94e3e86a83d084f4cf67d" class="anim_control">
+    <button onclick="anim20df426e26ab4e1ea935cf63753c30e9.slower()" style="text-align: center">&#8211;</button>
+    <button onclick="anim20df426e26ab4e1ea935cf63753c30e9.first_frame()" style="text-align: center; min-width: 40px">&#9616;&#9664;&#9664;</button>
+    <button onclick="anim20df426e26ab4e1ea935cf63753c30e9.previous_frame()" style="text-align: center; min-width: 40px">&#9616;&#9664;</button>
+    <button onclick="anim20df426e26ab4e1ea935cf63753c30e9.reverse_animation()" style="text-align: center; min-width: 40px">&#9664;</button>
+    <button onclick="anim20df426e26ab4e1ea935cf63753c30e9.pause_animation()" style="text-align: center; min-width: 40px">&#9616;&nbsp;&#9612;</button>
+    <button onclick="anim20df426e26ab4e1ea935cf63753c30e9.play_animation()" style="text-align: center; min-width: 40px">&#9654;</button>
+    <button onclick="anim20df426e26ab4e1ea935cf63753c30e9.next_frame()" style="text-align: center; min-width: 40px">&#9654;&#9612;</button>
+    <button onclick="anim20df426e26ab4e1ea935cf63753c30e9.last_frame()" style="text-align: center; min-width: 40px">&#9654;&#9654;&#9612;</button>
+    <button onclick="anim20df426e26ab4e1ea935cf63753c30e9.faster()" style="text-align: center">+</button>
+  <form action="#n" name="_anim_loop_select20df426e26ab4e1ea935cf63753c30e9" class="anim_control">
     <input type="radio" name="state" value="once" {once_checked}> Once </input>
     <input type="radio" name="state" value="loop" {loop_checked}> Loop </input>
     <input type="radio" name="state" value="reflect" {reflect_checked}> Reflect </input>
@@ -1774,7 +1777,7 @@ retina.  The axis scales on each plot can be used to compare specific areas acro
 
       function create_widget() {
           setTimeout(function() {
-              anim4aaaf0e045d94e3e86a83d084f4cf67d = new Animation(frame_data, 11, "4aaaf0e045d94e3e86a83d084f4cf67d", 50, false, false);
+              anim20df426e26ab4e1ea935cf63753c30e9 = new Animation(frame_data, 11, "20df426e26ab4e1ea935cf63753c30e9", 50, false, false);
           }, 0);
       }
 
@@ -1869,7 +1872,7 @@ retina.  The axis scales on each plot can be used to compare specific areas acro
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-Timer elapsed: 00:01:20
+Timer elapsed: 00:01:19
 
 </pre>
 </div>
