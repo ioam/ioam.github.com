@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Tutorials &mdash; Topographica</title>
+    
+    <link rel="stylesheet" href="../_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.9.8',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/custom.js"></script>
+    <link rel="shortcut icon" href="../_static/topo-favicon.ico"/>
+    <link rel="top" title="Topographica" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+
+<li><a href="http://ioam.github.io/topographica/index.html">DataViews Home</a></li>
+<li><a href="http://ioam.github.io/topographica/Tutorials/index.html">Tutorials</a></li>
+<li><a href="http://ioam.github.io/topographica/Reference_Manual/index.html">Reference Manual</a></li>
+
+
+
+
+
+
+
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="tutorials">
+<h1>Tutorials<a class="headerlink" href="#tutorials" title="Permalink to this headline">¶</a></h1>
+<p>Topographica comes with the following step-by-step guides to running
+simulations.</p>
+<div class="section" id="tutorials-using-the-tk-gui">
+<h2>Tutorials using the Tk GUI<a class="headerlink" href="#tutorials-using-the-tk-gui" title="Permalink to this headline">¶</a></h2>
+<p>The Tk GUI is a good way to explore a model without needing to
+write any additional code.  However, the GUI only supports a limited
+set of operations, and so after doing an initial exploration using the
+GUI, we recommend using the more-powerful IPython notebook interface
+illustrated in the following section.</p>
+<p><a class="reference external" href="./gcal.html">GCAL GUI Tutorial</a></p>
+<p>How to run and test a simple orientation map simulation using the
+GCAL cortical model from
+<a class="reference external" href="http://dx.doi.org/10.1523/JNEUROSCI.1037-13.2013">Stevens et al. (J. Neuroscience 2013)</a>.
+The tutorial allows you to present various objects to a saved
+orientation map network, and to visualize and analyze the
+responses. It also shows how to develop a new simulation using
+different input patterns.</p>
+<p>This tutorial supersedes an <a class="reference external" href="./lissom_oo_or.html">older tutorial</a> using the LISSOM model
+from  <a class="reference external" href="http://computationalmaps.org">Miikkulainen et al. (2005)</a>.</p>
+<p><a class="reference external" href="./som_retinotopy.html">SOM Retinotopy GUI Tutorial</a></p>
+<p>How to run a model that develops selectivity for position,
+mapping the input space to the cortical space. The model uses the
+abstract SOM algorithm, focusing on the basic principles of
+self-organization rather than modeling any particular biological
+system.</p>
+</div>
+<div class="section" id="ipython-notebooks">
+<h2>IPython Notebooks<a class="headerlink" href="#ipython-notebooks" title="Permalink to this headline">¶</a></h2>
+<p>In addition to the GUI-based way of interacting with Topographica
+illustrated in the tutorials above, you can also use <a class="reference external" href="http://ipython.org/notebook.html">IPython Notebook</a>, which provides a command-line
+prompt that allows you to weave together Python code, textual output,
+and graphical output.  This approach makes it easier to modify a
+model, look at parts of it not currently exposed in the GUI, and to
+develop new types of analyses not yet offered in the GUI.</p>
+<p><a class="reference external" href="http://ioam.github.io/media/topo/som_retinotopy.html">SOM Retinotopic Map</a></p>
+<p>How to run and explore the SOM algorithm in the notebook environment
+(same topics as the above GUI tutorial, but now showing how the
+commands are invoked and can be modified).  In addition, this notebook
+includes several videos showing how the SOM develops over time,
+showcasing a feature only available in the notebook environment.</p>
+<p><a class="reference external" href="http://ioam.github.io/media/topo/GCAL_Tutorial.html">GCAL Tutorial</a></p>
+<p>An exploration of GCAL or LISSOM model in the notebook environment.
+This tutorial covers the same material as the first GCAL tutorial, but
+adds animations showing how GCAL develops over time.</p>
+<p><a class="reference external" href="http://ioam.github.io/media/topo/GCAL_Collector.html">GCAL Collector Tutorial</a></p>
+<p>A demonstration of how the Collector class can be defined and used to
+collect measurements from a given model over development. Here the
+GCAL model is explored using more involved analysis than presented in
+the basic GCAL tutorial. Analysis over development includes
+orientation preference histograms, hypercolumn distance estimation,
+pinwheel finding and the pinwheel density estimation.</p>
+<p><a class="reference external" href="http://ioam.github.io/media/topo/gcal_all.html">GCAL All-Maps Tutorial</a></p>
+<p>The above GCAL tutorials all focus on orientation maps.  This tutorial
+shows how to use GCAL for developing maps for other visual feature
+dimensions, in any combination.  Making all maps develop well together
+is an ongoing project (and requires much greater computational
+resources than individual maps), but the individual maps and most
+combinations should be usable already.</p>
+<p>Other GCAL notebooks replicating <a class="reference external" href="http://dx.doi.org/10.1523/JNEUROSCI.1037-13.2013">Stevens et al. (J. Neuroscience 2013)</a> may be found
+<a class="reference external" href="https://github.com/ioam/topographica/tree/master/models/stevens.jn13">here</a>. These
+notebooks only aim to replicate the published results and are <em>not</em>
+up-to-date demonstrations of the recommended workflow for using
+Topographica in the IPython Notebook environment.</p>
+<p>Each of these tutorials should be a good starting point for seeing how
+Topographica works and how to use a Topographica model in practice. If
+you develop any other tutorials for your own models, we would love to
+add them here!</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/topo-banner7.png" alt="Logo"/>
+            </a></p>
+<ul class="global-toc">
+
+<li><a href="http://ioam.github.io/topographica/index.html">Home</a></li>
+<li><a href="http://ioam.github.io/topographica/News/index.html">News</a></li>
+<li><a href="http://ioam.github.io/topographica/Downloads/index.html">Downloads</a></li>
+<li><a href="http://ioam.github.io/topographica/Tutorials/index.html">Tutorials</a></li>
+<li><a href="http://ioam.github.io/topographica/User_Manual/index.html">User Manual</a></li>
+<li><a href="http://ioam.github.io/topographica/Reference_Manual/index.html">Reference Manual</a></li>
+<li><a href="http://ioam.github.io/topographica/Developer_Manual/index.html">Developer Manual</a></li>
+<li><a href="http://github.com/ioam/topographica">Github Source Code</a></li>
+<li><a href="http://ioam.github.io/topographica/Forums/index.html">Forums</a></li>
+<li><a href="http://ioam.github.io/topographica/Team_Members/index.html">Team Members</a></li>
+<li><a href="http://ioam.github.io/topographica/Future_Work/index.html">Future Work</a></li>
+<li><a href="http://ioam.github.io/topographica/FAQ/index.html">FAQ</a></li>
+<li><a href="http://ioam.github.io/topographica/Links/index.html">Links</a></li>
+<li><a href="http://ioam.github.io/topographica/Home/pubs.html">Publications</a></li>
+<li><a href="http://ioam.github.io/topographica/site_map.html">Site Map</a></li>
+</ul>
+<h3><a href="http://ioam.github.io/topographica/index.html">Table Of Contents</a></h3>
+
+<ul>
+<li><a class="reference internal" href="#">Tutorials</a><ul>
+<li><a class="reference internal" href="#tutorials-using-the-tk-gui">Tutorials using the Tk GUI</a></li>
+<li><a class="reference internal" href="#ipython-notebooks">IPython Notebooks</a></li>
+</ul>
+</li>
+</ul>
+
+
+<h3>This Page</h3>
+<ul class="this-page-menu">
+	<li><a	href="https://github.com/ioam/topographica/edit/master/doc/Tutorials/index.rst" rel="nofollow">Edit on GitHub</a></li>
+    <li><a	href="http://doozy.inf.ed.ac.uk:8010/builders/topographica_docs" rel="nofollow">Rebuild docs</a></li>
+</ul>
+
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+
+<li><a href="http://ioam.github.io/topographica/index.html">DataViews Home</a></li>
+<li><a href="http://ioam.github.io/topographica/Tutorials/index.html">Tutorials</a></li>
+<li><a href="http://ioam.github.io/topographica/Reference_Manual/index.html">Reference Manual</a></li>
+
+
+
+
+
+
+
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, IOAM.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>
