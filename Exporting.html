@@ -280,7 +280,7 @@
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The <code>%%output</code> magic is useful when you want specific plots saved into specific files.  Often, however, a notebook will contain an entire suite of results contained in multiple different cells, and manually specifying these cells and their filenames is errorprone, with a high likelihood of accidentally creating multiple files with the same name or using different names in different notebooks for the same objects.</p>
+<p>The <code>%%output</code> magic is useful when you want specific plots saved into specific files.  Often, however, a notebook will contain an entire suite of results contained in multiple different cells, and manually specifying these cells and their filenames is error-prone, with a high likelihood of accidentally creating multiple files with the same name or using different names in different notebooks for the same objects.</p>
 <p>To make the exporting process easier for large numbers of outputs, as well as more predictable, HoloViews also offers a powerful automatic notebook exporting facility, creating an archive of all your results.  Automatic export is very useful in the common case of having a notebook that contains a series of figures to be used in a report or publication, particularly if you are repeatedly re-running the notebook as you finalize your results, and want the full set of current outputs to be available to an external document preparation system.</p>
 </div>
 </div>
@@ -331,7 +331,7 @@ var kernel = IPython.notebook.kernel; var nbname = IPython.notebook.get_notebook
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>
-Automatic capture is now enabled. [2015-05-23 05:42:58]
+Automatic capture is now enabled. [2015-05-28 05:44:28]
 
 </pre>
 </div>
@@ -857,7 +857,7 @@ Status of the last call to holoviews.archive.export is unknown.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>By default, Holoviews saves not only your rendered plots (PNG, SVG, etc.), but also the actual HoloViews objects that the plots visualize, which contain all your actual data.  The objects are stored in Python pickle files (<code>.pkl</code>), which are visible in the directory listings above but have been ignored until now.  The plots are what you need for writing a document, but the raw data is is a crucial record to keep as well.  For instance, you now can load in the HoloViews object, and manipulate it just as you could when it was originally defined.  E.g. we can re-load our <code>Levels</code> <code>Overlay</code> file, which has the contours overlaid on top of the image, and easily pull out the underlying <code>Image</code> object:</p>
+<p>By default, HoloViews saves not only your rendered plots (PNG, SVG, etc.), but also the actual HoloViews objects that the plots visualize, which contain all your actual data.  The objects are stored in Python pickle files (<code>.pkl</code>), which are visible in the directory listings above but have been ignored until now.  The plots are what you need for writing a document, but the raw data is is a crucial record to keep as well.  For instance, you now can load in the HoloViews object, and manipulate it just as you could when it was originally defined.  E.g. we can re-load our <code>Levels</code> <code>Overlay</code> file, which has the contours overlaid on top of the image, and easily pull out the underlying <code>Image</code> object:</p>
 </div>
 </div>
 </div>
@@ -927,7 +927,7 @@ holoviews.archive.auto(exporters=[Store.PlotRenderer.instance(holomap=<span clas
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The export options from HoloViews help you establish a feasible workflow for doing reproducible research: starting from interactive exploration, either export specific files with <code>%%output</code>, or enable <code>holoviews.archive.auto()</code>, which will store a copy of your notebook and its output ready for inclusion in a document but retaining the complete recipe for reproducing the results later.  </p>
-<p>HoloViews also works very well with the <a href="http://ioam.github.io/lancet">Lancet</a> tool for exploring large parameter spaces, and Lancet provides an interface to Holoviews that makes Lancet output directly available for use in HoloViews.  Lancet, when used with IPython Notebook and HoloViews, makes it feasible to work with large numbers of computation-intensive processes that generate heterogenous data that needs to be collated, analyzed, and visualized. For more background and a suggested workflow, see our <a href="http://dx.doi.org/10.3389/fninf.2013.00044">2013 paper on using Lancet</a> with IPython Notebook, though that paper was written before the release of HoloViews and thus does not discuss how HoloViews helps in this process.</p>
+<p>HoloViews also works very well with the <a href="http://ioam.github.io/lancet">Lancet</a> tool for exploring large parameter spaces, and Lancet provides an interface to HoloViews that makes Lancet output directly available for use in HoloViews.  Lancet, when used with IPython Notebook and HoloViews, makes it feasible to work with large numbers of computation-intensive processes that generate heterogeneous data that needs to be collated, analyzed, and visualized. For more background and a suggested workflow, see our <a href="http://dx.doi.org/10.3389/fninf.2013.00044">2013 paper on using Lancet</a> with IPython Notebook, though that paper was written before the release of HoloViews and thus does not discuss how HoloViews helps in this process.</p>
 </div>
 </div>
 </div><hr class="docutils" />
