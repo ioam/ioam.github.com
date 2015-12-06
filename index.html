@@ -1,0 +1,284 @@
+
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>HoloViews Tutorials &mdash; HoloViews</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/bootstrap.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/codehilite.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/rtd_bootstrap.css" type="text/css" />
+  
+        <link rel="author" title="About these documents"
+              href="../about.html"/>
+    <link rel="top" title="HoloViews" href="../index.html"/>
+        <link rel="next" title="Showcase" href="Showcase.html"/>
+        <link rel="prev" title="Features" href="../features.html"/>
+    <script type="text/javascript" src='../_static/jquery.js'></script>
+    <script type="text/javascript" src='../_static/underscore.js'></script>
+    <script type="text/javascript" src='../_static/doctools.js'></script>
+    <script type="text/javascript" src='../_static/require.js'></script>
+    <script type="text/javascript" src='../_static/bootstrap.js'></script>
+    <script type="text/javascript" src='../_static/custom.js'></script>
+    <script type="text/javascript" src='../_static/js/theme.js'></script>
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+
+        
+          <img src="../_static/holoviews_logo.png" class="logo" />
+        
+
+        <a href="../index.html" class="fa"> HoloViews</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../features.html">Features</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Tutorials</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Showcase.html">Showcase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Introduction.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Exploring_Data.html">Exploring Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Transforming_Data.html">Transforming Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Options.html">Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Exporting.html">Exporting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Continuous_Coordinates.html">Continuous Coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Composing_Data.html">Composing Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Pandas_Conversion.html">Pandas Conversion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Pandas_Seaborn.html">Pandas and Seaborn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Elements.html">Elements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Containers.html">Containers</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Examples/index.html">Examples</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Reference_Manual/index.html">Reference Manual</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Reference_Manual/holoviews.core.html">core</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reference_Manual/holoviews.element.html">element</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reference_Manual/holoviews.interface.html">interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reference_Manual/holoviews.ipython.html">ipython</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reference_Manual/holoviews.operation.html">operation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Reference_Manual/holoviews.plotting.html">plotting</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../FAQ.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://github.com/ioam/holoviews">Github source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a><ul class="simple">
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">HoloViews</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="main">
+            
+  <div class="section" id="holoviews-tutorials">
+<h1>HoloViews Tutorials<a class="headerlink" href="#holoviews-tutorials" title="Permalink to this headline">¶</a></h1>
+<p>The HoloViews tutorials are the best way to learn what HoloViews can
+do and how to use it.  The web site has static copies of each
+tutorial, but it is much more effective to install HoloViews and try
+it out live for yourself, using the notebook files in this <a class="reference external" href="notebooks-1.4.0.zip">zip
+archive</a>.</p>
+<div class="section" id="introductory-tutorials">
+<h2>Introductory Tutorials<a class="headerlink" href="#introductory-tutorials" title="Permalink to this headline">¶</a></h2>
+<p>These explanatory tutorials are meant to be viewed and worked through
+in this order:</p>
+<ul class="simple">
+<li><a class="reference external" href="Showcase">Showcase:</a>
+Brief demonstration of what HoloViews can do for you and your data.</li>
+<li><a class="reference external" href="Introduction">Introduction:</a>
+How to use HoloViews &#8211; basic concepts and getting started.</li>
+<li><a class="reference external" href="Exploring_Data">Exploring Data:</a>
+How to use HoloViews containers to flexibly hold all your data
+ready for selecting, sampling, slicing, viewing, combining, and
+animating.</li>
+<li><a class="reference external" href="Sampling_Data">Sampling Data:</a>
+How to select data in multiple dimensions and begin transforming
+it into different types.</li>
+</ul>
+</div>
+<div class="section" id="supplementary-tutorials">
+<h2>Supplementary Tutorials<a class="headerlink" href="#supplementary-tutorials" title="Permalink to this headline">¶</a></h2>
+<p>There are additional tutorials detailing other features of HoloViews:</p>
+<ul class="simple">
+<li><a class="reference external" href="Options">Options:</a>
+Listing and changing the many options that control how HoloViews
+visualizes your objects, from Python or IPython.</li>
+<li><a class="reference external" href="Exporting">Exporting:</a>
+How to save HoloViews output for use in reports and publications,
+as part of a reproducible yet interactive scientific workflow.</li>
+<li><a class="reference external" href="Continuous_Coordinates">Continuous Coordinates:</a>
+How to use continuous coordinates to work with real-world data or
+smooth functions.</li>
+<li><a class="reference external" href="Composing_Data">Composing Data:</a>
+Complete example of the full range of hierarchical, multidimensional
+discrete and continuous data structures supported by HoloViews.</li>
+<li><a class="reference external" href="Pandas_Conversion">Pandas Conversion:</a>
+Using HoloViews the DFrame conversion wrapper to convert pandas
+dataframes into HoloViews components.</li>
+<li><a class="reference external" href="Pandas_Seaborn">Pandas and Seaborn:</a>
+Specialized visualizations provided by pandas and seaborn.</li>
+</ul>
+</div>
+<div class="section" id="reference-notebooks">
+<h2>Reference Notebooks<a class="headerlink" href="#reference-notebooks" title="Permalink to this headline">¶</a></h2>
+<p>At any point, you can look through these comprehensive but less
+explanatory overview tutorials.  For each of the HoloViews components
+available, these tutorials show how to create it, how the objects are
+plotted by default, and show how to list and change all of the
+visualization options for that object type:</p>
+<ul class="simple">
+<li><a class="reference external" href="Elements">Elements:</a>
+Overview and examples of all HoloViews element types, the atomic items
+that can be combined together.</li>
+<li><a class="reference external" href="Containers">Containers:</a>
+Overview and examples of all the HoloViews container types.</li>
+</ul>
+<p>For more detailed (but less readable!) information on any component
+described in these tutorials, please refer to the <a class="reference external" href="../Reference_Manual">Reference Manual</a>. For further notebooks demonstrating how to
+extend HoloViews and apply it to real world data see the <a class="reference external" href="../Examples">Examples</a> page.</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Showcase.html" class="btn btn-neutral float-right" title="Showcase"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../features.html" class="btn btn-neutral" title="Features"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015 IOAM: Jean-Luc R. Stevens, Philipp Rudiger, and James A. Bednar.
+    </p>
+  </div>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61554933-1', 'auto');
+  ga('send', 'pageview');
+
+  </script>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.4.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
